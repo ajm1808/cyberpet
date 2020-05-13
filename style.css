@@ -8,6 +8,11 @@ body{
     
 }
 
+.select{
+    display:flex;
+    
+}
+
 .wrapper{
     align-items: center; 
     justify-content: center;
