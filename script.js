@@ -10,47 +10,27 @@ const thirst=document.getElementById("thirst-level");
 const sad=document.getElementById("sad-level");
 const fun=document.getElementById("fun-level");
 const petType=document.querySelector(".pet-type");
+const header=document.getElementById("header");
 
 let decayInt;
 let gamePlaying=false;
 
 
-class Pet{
-    constructor (name){
-    this._name = name;
-    this._hunger = 10;
-    this._thirst = 10;
-    this._happy=10;
-    this._sad=0;
-    }
-    get name(){
-    return this._name;
-    }
-    get hunger(){
-    return this._hunger;
-    }
-    get thirst(){
-    return this._thirst;
-    }
-    play(){
-    this._happy ++; 
-    this._sad --;   
-    }
-    eat(){
-    this._hunger--;
-    }
-    drink(){
-    this._thirst--;
-    } 
-    
-}
 
+catdogBtn.addEventListener("click",()=>{
+    petImage.src="img/catdog.png";
+})
+
+uniBtn.addEventListener("click",()=>{
+    petImage.src="img/unicorn.png";
+
+})
 
 function start() {
     gamePlaying=true;
 
-    petImage.style.visibility="hidden";
-    petType.textContent="";
+    petImage.style.display="block";
+    header.textContent="Pick your pet and look after it well...";
     feedBtn.style.visibility="visible";
     drinkBtn.style. visibility="visible";
     playBtn.style.visibility="visible";
@@ -75,19 +55,21 @@ function decay(){
     fun.textContent--;
     if(hunger.textContent==10||thirst.textContent==10){
         gamePlaying=false;
-        petType.textContent="Yo pet died!";
+        header.textContent="Yo pet died!";
         gameOver();
         
     }
-    else {
+    else if(sad.textContent==10||fun.textContent==0){
+        gamePlaying=false;
+        header.textContent="Yo pet died!";
+        gameOver();
+    }    
+    else{
         gamePlaying=true;
         
     }
     
 }
-
-
-// start();
 
 feedBtn.addEventListener("click",feeding);
 
@@ -127,3 +109,33 @@ function gameOver(){
     drinkBtn.style. visibility="hidden";
     playBtn.style.visibility="hidden";
 }
+
+
+
+// class Pet{
+//     //     constructor (name){
+//     //     this._name = name;
+//     //     this._hunger = 10;
+//     //     this._thirst = 10;
+//     //     this._happy=10;
+//     //     this._sad=0;
+//     //     }
+//     //     get name(){
+//     //     return this._name;
+//     //     }
+//     //     get hunger(){
+//     //     return this._hunger;
+//     //     }
+//     //     get thirst(){
+//     //     return this._thirst;
+//     //     }
+//     //     play(){
+//     //     this._happy ++; 
+//     //     this._sad --;   
+//     //     }
+//     //     eat(){
+//     //     this._hunger--;
+//     //     }
+//     //     drink(){
+//     //     this._thirst--;
+//     //     } 

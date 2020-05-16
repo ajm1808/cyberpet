@@ -9,8 +9,9 @@ body{
 }
 
 .select{
-    display:flex;
-    
+    width:400px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .wrapper{
@@ -27,6 +28,39 @@ body{
 h1{
     text-align: center;
     padding-top: 50px;
+}
+
+.pet1{
+    width:50vw;
+}
+
+.pet2{
+    width:50vw;
+}
+
+.catdog-btn{
+    background: none;
+    border:none;
+}
+
+.uni-btn{
+        background: none;
+        border:none;
+}
+
+.feed-btn{
+    background: none;
+    border:none;
+}
+
+.drink-btn{
+    background: none;
+    border:none;
+}
+
+.play-btn{
+    background: none;
+    border:none;
 }
 
 .container{
@@ -72,3 +106,4 @@ h1{
     display: flex;
     flex-wrap: wrap;
 }
+
