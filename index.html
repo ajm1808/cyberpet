@@ -8,36 +8,38 @@
 <body>
     <h1 id="header">Pick your pet and look after it well...</h1>
     <div class="select">
-        <div class="pet pet1"><image src="" id="pet-image-0">Dog</image>
+        <div class="pet pet1"><button class="catdog-btn">CatDog</button>
         </div>    
-        <div class="pet pet2"><image src="" id="pet-image-1">Cat</image>
-        </div>
-        <div class="pet pet3">
-        <image src="" id="pet-image-2">Unicorn</image>
+        <div class="pet pet2">
+            <button class="uni-btn">Unicorn</button>
         </div>
     </div>
     <div class="wrapper">
         
         <div class="container">
          <div class= "box box1">
-             <div class="header status"><h2>Pet Status</h2></div><div class="attribute">
-                <div class= "hunger"><p id="hunger">Hunger</p>
-                    <p id="hunger-level">0</p>
-                </div> 
-                <div class= "thirst"><p id="thirst">Thirst</p>
-                    <p id="thirst-level">0</p>
-                </div> 
-                <div class= "boredom"><p id="boredom">Boredom</p>
-                    <p id="boredome-level">0</p>
-                </div> 
-                <div class= "fun"><p id="fun">Fun</p>
-                    <p id="fun-level">0</p>
+             <div class="header status"><h2>Pet Status</h2></div>
+             <div class="attribute">
+                <div class= "hunger box" id="hunger title">Hunger</div>
+                    <div class="hunger-score" id="hunger-level">0</div>
+                
+                <div class= "thirst box" id="thirst title">Thirst</div>
+                    <div class="thirst-score" id="thirst-level">0</div>
+                 
+                <div class= "sad box" id="sad title">Sad</div>
+                    <div class="sad-score" id="sad-level">0</div>
+                
+                <div class= "fun box" id="fun title">Fun</div>
+                    <div class="fun-score" id="fun-level">0</div>
+                 
                 </div>
             </div>     
-         </div>
+         
          <div class= "box box2">
-            <div class= "pet type"><h2 id ="pet type">Dog</h2></div>
-            <image src="" id="pet-image-0"></image>
+            <div class= "pet-type" id ="pet-type">Dog</div>
+            <image src="" id="pet-image"></image>
+            <button class="start-btn">Start Game</button>
+            
          </div>
          <div class="box box3">
                 <button class="feed-btn">Feed your Pet</button>
