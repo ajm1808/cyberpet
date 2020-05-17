@@ -12,10 +12,48 @@ const fun=document.getElementById("fun-level");
 const petType=document.querySelector(".pet-type");
 const header=document.getElementById("header");
 
+
+
 let decayInt;
-let gamePlaying=false;
+gamePlaying=false;
 
+function stasis(){
+if(hunger.textContent<=0){   gamePlaying=false;   
+    hunger.textContent==0;
 
+}
+else if(hunger.textContent>=10){
+    gamePlaying=false;
+    hunger.textContent==10;
+};
+
+if(thirst.textContent<=0){  
+    gamePlaying=false;
+    thirst.textContent==0;
+}
+else if(thirst.textContent>=10){
+    gamePlaying=false;
+    thirst.textContent==10;
+};
+
+if(sad.textContent<=0){
+    gamePlaying=false;
+    sad.textContent==0
+}
+else if(sad.textContent>=10){
+    gamePlaying=false;
+    sad.textContent==10
+};
+
+if(fun.textContent<=0){
+    gamePlaying=false;
+    fun.textContent==0
+}
+else if(fun.textContent>=10){
+    gamePlaying=false;
+    fun.textContent==10
+};
+}
 
 catdogBtn.addEventListener("click",()=>{
     petImage.src="img/catdog.png";
@@ -26,25 +64,46 @@ uniBtn.addEventListener("click",()=>{
 
 })
 
+function checkP(){
+    if(petImage.src="img/catdog.png"){
+    return true;
+    }
+    else if (petImage.src="img/unicorn.png"){
+    return true;
+    }
+    else{
+    return false;
+    }
+    
+}
+
 function start() {
     gamePlaying=true;
-
-    petImage.style.display="block";
-    header.textContent="Pick your pet and look after it well...";
+    petImage.style.visibility="visible";
+    header.textContent=" ";
     feedBtn.style.visibility="visible";
     drinkBtn.style. visibility="visible";
     playBtn.style.visibility="visible";
-    hunger.textContent=5;
+    hunger.textContent=3;
     thirst.textContent=5;
-    sad.textContent=5;
-    fun.textContent=5;
-    decayInt=setInterval(decay,3000);
+    sad.textContent=4;
+    fun.textContent=6;
+    decayInt=setInterval(decay,6000);
+    stasis();
+    
+};
 
-}
 
 
+startBtn.addEventListener("click",()=>{
+    if(checkP=true){
+        start();
+    }
+    else{
+        gamePlaying=false
+    }
 
-startBtn.addEventListener("click",start);
+});
 
 
 function decay(){
@@ -53,13 +112,13 @@ function decay(){
     thirst.textContent++;
     sad.textContent++;
     fun.textContent--;
-    if(hunger.textContent==10||thirst.textContent==10){
+    if(hunger.textContent>=10||thirst.textContent>=10){
         gamePlaying=false;
         header.textContent="Yo pet died!";
         gameOver();
         
     }
-    else if(sad.textContent==10||fun.textContent==0){
+    else if(sad.textContent>=10||fun.textContent<=0){
         gamePlaying=false;
         header.textContent="Yo pet died!";
         gameOver();
@@ -74,28 +133,45 @@ function decay(){
 feedBtn.addEventListener("click",feeding);
 
 function feeding (){
+    if(gamePlaying=true){
     hunger.textContent--;
     thirst.textContent++;
     sad.textContent--;
     fun.textContent++;
+    stasis();
+    }
+    else{
+        gameOver();
+    }
 }
 
 drinkBtn.addEventListener("click",drinking);
 
 function drinking (){
-    hunger.textContent--;
+    if(gamePlaying=true){
+    
     thirst.textContent--;
     sad.textContent--;
-    fun.textContent--;
+    
+    stasis();
+    }
+    else{
+        gameOver();
+    }
 }
 
 playBtn.addEventListener("click",playing);
 
 function playing (){
+    if(gamePlaying=true){
     thirst.textContent++;
     sad.textContent--;
     fun.textContent++;
-    
+    stasis();
+    }
+    else{
+        gameOver();
+    }
 }
 
 function gameOver(){
@@ -108,34 +184,11 @@ function gameOver(){
     feedBtn.style.visibility="hidden";
     drinkBtn.style. visibility="hidden";
     playBtn.style.visibility="hidden";
+    setTimeout(reset(),9000);
 }
 
+function reset(){
+    petImage.src="";
+    header.textContent="Pick your pet and look after it well...";
+}
 
-
-// class Pet{
-//     //     constructor (name){
-//     //     this._name = name;
-//     //     this._hunger = 10;
-//     //     this._thirst = 10;
-//     //     this._happy=10;
-//     //     this._sad=0;
-//     //     }
-//     //     get name(){
-//     //     return this._name;
-//     //     }
-//     //     get hunger(){
-//     //     return this._hunger;
-//     //     }
-//     //     get thirst(){
-//     //     return this._thirst;
-//     //     }
-//     //     play(){
-//     //     this._happy ++; 
-//     //     this._sad --;   
-//     //     }
-//     //     eat(){
-//     //     this._hunger--;
-//     //     }
-//     //     drink(){
-//     //     this._thirst--;
-//     //     } 
