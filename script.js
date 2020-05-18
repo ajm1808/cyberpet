@@ -11,48 +11,16 @@ const sad=document.getElementById("sad-level");
 const fun=document.getElementById("fun-level");
 const petType=document.querySelector(".pet-type");
 const header=document.getElementById("header");
-
-
+const att=document.getElementsByClassName(".score");
 
 let decayInt;
 gamePlaying=false;
 
 function stasis(){
-if(hunger.textContent<=0){   gamePlaying=false;   
-    hunger.textContent==0;
-
+if(att.textContent==11||att.textContent==-1){
+    gamePlaying=false;
+    gameOver();
 }
-else if(hunger.textContent>=10){
-    gamePlaying=false;
-    hunger.textContent==10;
-};
-
-if(thirst.textContent<=0){  
-    gamePlaying=false;
-    thirst.textContent==0;
-}
-else if(thirst.textContent>=10){
-    gamePlaying=false;
-    thirst.textContent==10;
-};
-
-if(sad.textContent<=0){
-    gamePlaying=false;
-    sad.textContent==0
-}
-else if(sad.textContent>=10){
-    gamePlaying=false;
-    sad.textContent==10
-};
-
-if(fun.textContent<=0){
-    gamePlaying=false;
-    fun.textContent==0
-}
-else if(fun.textContent>=10){
-    gamePlaying=false;
-    fun.textContent==10
-};
 }
 
 catdogBtn.addEventListener("click",()=>{
@@ -80,7 +48,7 @@ function checkP(){
 function start() {
     gamePlaying=true;
     petImage.style.visibility="visible";
-    header.textContent=" ";
+    header.textContent="Don't forget to play with it!";
     feedBtn.style.visibility="visible";
     drinkBtn.style. visibility="visible";
     playBtn.style.visibility="visible";
@@ -89,8 +57,6 @@ function start() {
     sad.textContent=4;
     fun.textContent=6;
     decayInt=setInterval(decay,6000);
-    stasis();
-    
 };
 
 
@@ -114,13 +80,12 @@ function decay(){
     fun.textContent--;
     if(hunger.textContent>=10||thirst.textContent>=10){
         gamePlaying=false;
-        header.textContent="Yo pet died!";
         gameOver();
         
     }
     else if(sad.textContent>=10||fun.textContent<=0){
         gamePlaying=false;
-        header.textContent="Yo pet died!";
+        
         gameOver();
     }    
     else{
@@ -139,6 +104,7 @@ function feeding (){
     sad.textContent--;
     fun.textContent++;
     stasis();
+    header.textContent="Let's burn off those calories";
     }
     else{
         gameOver();
@@ -154,6 +120,7 @@ function drinking (){
     sad.textContent--;
     
     stasis();
+    header.textContent="Food goes well with beer!";
     }
     else{
         gameOver();
@@ -168,6 +135,7 @@ function playing (){
     sad.textContent--;
     fun.textContent++;
     stasis();
+    header.textContent="Playing makes me thirsty";
     }
     else{
         gameOver();
@@ -180,15 +148,16 @@ function gameOver(){
     thirst.textContent=0;
     sad.textContent=0;
     fun.textContent=0;
+    header.textContent="Dammmmmmnnn, Yo pet died!";
     clearInterval(decayInt);
     feedBtn.style.visibility="hidden";
     drinkBtn.style. visibility="hidden";
     playBtn.style.visibility="hidden";
-    setTimeout(reset(),9000);
+    setTimeout(()=>{
+        petImage.src="";
+        header.textContent="Pick your pet and look after it well...";
+    },9000);
 }
 
-function reset(){
-    petImage.src="";
-    header.textContent="Pick your pet and look after it well...";
-}
+
 

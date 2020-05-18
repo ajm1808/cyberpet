@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="back">
     <h1 id="header">Pick your pet and look after it well...</h1>
+    <div class="selectwrap">
     <div class="select">
         <div class="pet pet1"><button class="catdog-btn"><img src="img/catdog.png" id="catdog"></button>
         </div>    
@@ -14,22 +16,23 @@
             <button class="uni-btn"><img src="img/unicorn.png" id="unicorn"></button>
         </div>
     </div>
+    </div>
     <div class="wrapper">
         
         <div class="container">
          <div class= "box box1">
              <div class="header status"><h2>Pet Status</h2></div>
              <div class="attribute">
-                <div class= "hunger box" id="hunger title">Hunger</div>
+                <div class= "hunger row" id="hunger title">Hunger</div>
                     <div class="hunger-score" id="hunger-level">0</div>
                 
-                <div class= "thirst box" id="thirst title">Thirst</div>
+                <div class= "thirst row" id="thirst title">Thirst</div>
                     <div class="thirst-score" id="thirst-level">0</div>
                  
-                <div class= "sad box" id="sad title">Sad</div>
+                <div class= "sad row" id="sad title">Sad</div>
                     <div class="sad-score" id="sad-level">0</div>
                 
-                <div class= "fun box" id="fun title">Fun</div>
+                <div class= "fun row" id="fun title">Fun</div>
                     <div class="fun-score" id="fun-level">0</div>
                  
                 </div>
@@ -38,15 +41,16 @@
          <div class= "box box2">
             <div class= "pet-type" id ="pet-type"></div>
             <image src="" id="pet-image"></image>
-            <button class="start-btn">Start Game</button>
+            <button class="start-btn">Start</button>
             
          </div>
          <div class="box box3">
                 <button class="feed-btn"><img src="img/feed.png"></button>
                 <button class="drink-btn"><img src="img/drink.png"></button>
-                <button class="play-btn"><img src="img/play.jpg"></button>
+                <button class="play-btn"><img src="img/play.png"></button>
          </div>   
         </div>    
+    </div>
     </div>
     <script src="script.js"></script>
 </body>

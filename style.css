@@ -1,43 +1,58 @@
 *{
-    margin: 0px;
+    margin:0px;
 }
 body{
     background-image: linear-gradient(to right, purple, orange);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: whitesmoke;
     background-size: cover;
+    
+    height:100vh;
+    
+}
+
+.back{
+    background-image: linear-gradient(to right, rgba(100, 3, 100, 0.473), rgba(168, 110, 2, 0.445));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    background-size: cover;
+    margin-left: 100px;
+    margin-right:100px;
+    height:100vh;
+    border-left:4px solid purple;
+    border-right:2px solid purple ;
+    font-weight: 300;
+}
+
+.selectwrap{
+    display:flex;
+    justify-content:    center;
+    align-items:center;
+    padding-bottom: 10px;
 }
 
 .select{
-    width:400px;
+  
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-content: center;
 }
+
 
 .wrapper{
-    align-items: center; 
-    justify-content: center;
-    text-align: center;
-    height:100vh;
-    width: 100vw;
-    display: flex;
-    overflow: hidden;
-   
+    padding:5px;
 }
 
+
 h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     padding-top: 50px;
 }
 
-.pet1{
-    width:50vw;
+.pet{
+    align-self: center;
 }
-
-.pet2{
-    width:50vw;
-}
-
 .catdog-btn{
     background: none;
     border:none;
@@ -66,7 +81,7 @@ h1{
 .container{
     display: flex; 
     flex-direction: row; 
-    justify-content: space-around;
+    justify-content: space-evenly;
     height: 300px;
     width: 100%;
     margin: 0px;
@@ -75,6 +90,7 @@ h1{
     transition:0.07s;
     align-self: center;
     overflow:hidden;
+    padding:5px;
 }
 
 .box{
@@ -82,28 +98,59 @@ h1{
     width: 300px;
     align-content: center;
     background-color:rgba(146, 120, 161, 0.699);
-    padding-top: 10px;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 15px 15px;
     align-self: center;
+    border: 2px solid orange;
     
     
 }
+
+.box1{
+    display:flex;
+    flex-direction: column;
+}
+
 
 .attribute{
     background-color: rgba(245, 245, 245, 0.342);
     width: 300px;
     align-content: center;
     display:flex;
-    justify-content: space-evenly;
-   
+    justify-content: space-between;
+    flex:1;
+    flex-direction: column;
+    font-size: large;
+    padding-bottom: 2px;
 }
 
-#title{
-    
+.row{
+    background-color: rgba(245, 245, 245, 0.342);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.box2{
+    padding-top: -10px;
+    justify-content: center;
+    height:100%;
+    align-content: baseline;
+    position: relative;
+}
+
+.start-btn{
+   width: 50px;
+   background:none;
+   border:none;
+   color: whitesmoke;
+   font-size: large;
+   font-weight: bold;
+   top:610px;
+   position: fixed;
+   left:48%;
 }
 
 .box3{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
